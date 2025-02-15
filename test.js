@@ -92,16 +92,6 @@
 // if (chosen === 2) frindDetails(f2);
 // if (chosen === 3) frindDetails(f3);
 ////////////////////////////////
-
-// const fs = require("node:fs");
-// const filecontent = fs.readFileSync("./views/pro.txt", "utf8");
-
-// const { logger, logger2 } = require("./logger");
-
-// logger("Hello from logger");
-// logger2("Hello from logger");
-//////////////////////////////////////////////////////
-
 const express = require("express");
 const app = express();
 const port = 3000;
