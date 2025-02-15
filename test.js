@@ -92,14 +92,34 @@
 // if (chosen === 2) frindDetails(f2);
 // if (chosen === 3) frindDetails(f3);
 ////////////////////////////////
+
+// const fs = require("node:fs");
+// const filecontent = fs.readFileSync("./views/pro.txt", "utf8");
+
+// const { logger, logger2 } = require("./logger");
+
+// logger("Hello from logger");
+// logger2("Hello from logger");
+//////////////////////////////////////////////////////
+
 const express = require("express");
 const app = express();
 const port = 3000;
+const path = require("path");
+const mongoose = require("mongoose");
+mongoose
+  .connect(
+    "mongodb+srv://omar:OmarAh123@cluster0.76cbz.mongodb.net/all-data?retryWrites=true&w=majority&appName=Cluster0 "
+  )
+  .then(() => {
+    app.listen(port, () => {
+      console.log(`http://localhost:${port}`);
+    });
+  })
+  .catch((err) => {
+    console.log(err);
+  });
 
 app.get("/", (req, res) => {
-  res.sendFile("./views/index.html")
-});
-
-app.listen(port, () => {
-  console.log(`Example app != listening on port ${port}`);
+  res.sendFile(__dirname + "/views/index.html");
 });
